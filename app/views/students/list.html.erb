@@ -1,0 +1,44 @@
+
+
+
+<% @page_title="Students List"%>
+
+<div class="student list">
+<h2>Students</h2>
+
+<%= link_to("Add New Student", {:action => 'new'}, :class => 'new') %>
+<table class="listing" summary="Student list">
+<tr class="header">
+
+<th>ID &nbsp</th>
+<th>Student</th>
+<th>UserName &nbsp</th>
+<th>Password &nbsp</th>
+<th>Std &nbsp</th>
+<th>Section &nbsp</th>
+<th>Email ID &nbsp</th>
+<th>Mobile no. &nbsp</th>
+<th>Actions</th>
+</tr>
+<% @students.each do |student| %>
+<tr>
+<td><%= student.id %></td> 
+<td><%= student.name %></td> 
+<td><%= student.username %></td>
+<td><%= student.password %></td>
+<td><%= student.std %></td>
+<td><%= student.section %></td>
+<td><%= student.email %></td>
+<td><%= student.mobile %></td>
+
+
+
+<td class="actions">
+<%= link_to("Show", {:action => 'show', :id => student.id}, :class => 'action show') %>
+<%= link_to("Edit", {:action => 'edit', :id => student.id}, :class => 'action edit') %>
+<%= link_to("Delete", {:action => 'delete', :id => student.id}, :class => 'action delete') %>
+</td>
+</tr>
+<% end %>
+</table>
+</div>	
